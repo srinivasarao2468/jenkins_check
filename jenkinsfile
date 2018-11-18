@@ -8,5 +8,7 @@ node{
         def elements =  repositoryUrl.split("/")
         def projectName = elements[elements.size()-1].split("\\.")[0]
         echo projectName
+        def app = projectName.split("_").first()
+        echo app
     }
 }
