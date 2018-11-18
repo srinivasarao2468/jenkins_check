@@ -12,7 +12,7 @@ node{
         echo app
         def app_name = projectName.split("_").last().toUpperCase()
         echo app_name
-
-
+        def now = new Date()
+        println now.format("YYYYMMdd-HH:mm:ss")
     }
 }
