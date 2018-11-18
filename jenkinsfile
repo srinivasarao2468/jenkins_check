@@ -1,7 +1,7 @@
 node{
     stage('sample'){
         checkout(scm)
-        echo scm
+        echo scm.getRepositories()[0].getName()
         //git 'https://github.com/srinivasarao2468/jenkins_check.git'
         properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '7', numToKeepStr: '7'))])
         purl = bat'git config remote.origin.url'
