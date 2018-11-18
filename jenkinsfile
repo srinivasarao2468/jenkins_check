@@ -6,9 +6,13 @@ node{
         //git 'https://github.com/srinivasarao2468/jenkins_check.git'
         properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '7', numToKeepStr: '7'))])
         def elements =  repositoryUrl.split("/")
-        def projectName = elements[elements.size()-1].split("\\.")[0]
+        def projectName = elements[elements.size()-1].split("\\.")[0].toUpperCase()
         echo projectName
-        def app = projectName.split("_").first()
+        def app = projectName.split("_").first().toUpperCase()
         echo app
+        def app_name = projectName.split("_").last().toUpperCase()
+        echo app_name
+
+
     }
 }
