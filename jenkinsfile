@@ -14,7 +14,7 @@ node{
         echo app_name
         def date = new Date()
         println date.format("YYYY-MM-dd HH:mm:ss")
-        packageVersion = bat(script: 'git tag | sort -t .  -k1,1n -k2,2n -k3,3n | tail -n1', returnStdout: true).trim()
+        packageVersion = bat(script: 'git tag | sort -t .  -k1,1n -k2,2n -k3,3n | select -last 1', returnStdout: true).trim()
         echo "packageVersion-${packageVersion}"
     }
 }
